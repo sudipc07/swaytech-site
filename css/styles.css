@@ -159,11 +159,13 @@ h2 {
 .hero-backdrop {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-      rgba(11, 31, 58, 0.95) 0%,
-      rgba(11, 31, 58, 0.45) 35%,
-      rgba(11, 31, 58, 0.1) 85%,
-      rgba(11, 31, 58, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(11, 31, 58, 0.95) 0%,
+    rgba(11, 31, 58, 0.45) 35%,
+    rgba(11, 31, 58, 0.1) 85%,
+    rgba(11, 31, 58, 0) 100%
+  );
 }
 
 .hero-content {
@@ -255,7 +257,7 @@ h2 {
   font-size: 1.03rem;
 }
 
-.about-copy p+p {
+.about-copy p + p {
   margin-top: 1rem;
 }
 
@@ -394,6 +396,72 @@ h2 {
   margin-bottom: 1.65rem;
 }
 
+/* Contact Form */
+.contact-form {
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition:
+    border-color var(--ease),
+    background-color var(--ease),
+    box-shadow var(--ease);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+.contact-form button.btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  background: rgba(212, 175, 55, 0.95);
+  color: var(--primary);
+  border-color: rgba(212, 175, 55, 0.95);
+}
+
+.contact-form button.btn:hover,
+.contact-form button.btn:focus-visible {
+  background: transparent;
+  color: #fff;
+}
+
 .cta .btn {
   background: rgba(212, 175, 55, 0.95);
   color: var(--primary);
@@ -441,7 +509,6 @@ h2 {
 }
 
 @media (max-width: 1040px) {
-
   .about-grid,
   .why-grid,
   .services-grid {
